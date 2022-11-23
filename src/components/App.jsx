@@ -12,28 +12,43 @@ export class App extends Component {
     bad: 0
   }
 
+  
+
   handleIncrement = e =>{
-    // console.log(e.target.name);
-
-
     const { name } = e.currentTarget
-    
     this.setState(prevState => {
-    
-        
+
         return {
             [name]: prevState[name] + 1
         }
-        // console.log(prevState.qwerty);
-    })
-}
+       
+    });
+  }
+
+  countTotalFeedback = () =>{
+    const {good, neutral, bad} = this.state
+    const totalFeedback = good+neutral+bad
+    return totalFeedback
+  }
+
+  countPositiveFeedbackPercentage = () =>{
+    const {good, neutral, bad} = this.state
+    const totalFeedback = good+neutral+bad
+    const positivFeedback = good / totalFeedback * 100
+    return positivFeedback
+  }
+  
 
 
   render(){
     return (
           <div>
             <Feedback handleIncrement = {this.handleIncrement}/>
-            <Statistics state ={this.state}/>
+            <Statistics 
+                state ={this.state} 
+                totalFeedback={this.countTotalFeedback}
+                positivFeedback={this.countPositiveFeedbackPercentage}
+                />
           </div>
         );
   }

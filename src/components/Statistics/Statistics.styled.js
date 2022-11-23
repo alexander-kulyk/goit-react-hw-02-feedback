@@ -13,3 +13,10 @@ export const TitleStat  = styled.h2`
 export const ItemStat  = styled.p`
   
 `;
+
+export const Total  = styled.p`
+  
+`;
+export const Positive  = styled.p`
+  
+`;
