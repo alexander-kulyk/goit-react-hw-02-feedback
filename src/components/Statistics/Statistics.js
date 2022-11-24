@@ -16,6 +16,8 @@ export const Statistics = ({good, neutral, bad, totalFeedback, positivePercentag
          ? Math.round(positive)
          : 0
     }
+
+   
     return(
         <ContainerStat>
             <ItemStat style={{backgroundColor: 'green'}}>Good: {good}</ItemStat>
