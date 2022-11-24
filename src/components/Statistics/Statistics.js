@@ -5,10 +5,10 @@ import { ContainerStat, ItemStat, Positive, TitleStat, Total } from "./Statistic
 
 
 
-export const Statistics = ({state:{good, neutral, bad}, totalFeedback, positivFeedback}) => {
+export const Statistics = ({good, neutral, bad, totalFeedback, positivePercentage}) => {
 
     const total = totalFeedback();
-    const positive = positivFeedback()
+    const positive = positivePercentage()
 
     const calcPositiveFeedback = () =>{
         return positive > 0 

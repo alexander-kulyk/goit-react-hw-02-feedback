@@ -7,12 +7,3 @@ export const Container = styled.div`
   
 `;
 
-export const Button = styled.button`
-    margin-left: 5px;
-  
-`;
-
-export const TitleFeedback = styled.h1`
-
-  
-`;

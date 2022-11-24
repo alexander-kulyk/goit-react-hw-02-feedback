@@ -1,17 +1,16 @@
 
 // import React, { Component } from "react";
-import { Container, Button, TitleFeedback } from "./Feedback.styled";
+import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
+import { Container, TitleFeedback } from "./Feedback.styled";
 
 
 
-const Feedback = ({handleIncrement}) =>{
+const Feedback = ({onLeaveFeedback}) =>{
     
     return(
         <Container>
              <TitleFeedback>Please leave feedBack</TitleFeedback>
-                <Button name="good" onClick={handleIncrement} >Good</Button>
-                <Button name="neutral" onClick={handleIncrement} >Neutral</Button>
-                <Button name="bad" onClick={handleIncrement} >Bad</Button>
+              {/* <FeedbackOptions  handleIncrement = {handleIncrement} /> */}
         </Container>
     )
 

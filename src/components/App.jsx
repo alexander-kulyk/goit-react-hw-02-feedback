@@ -1,6 +1,7 @@
 // import { Box } from "./Box/Box";
 import React, { Component } from "react";
-import Feedback from "./Feedback/Feedback";
+import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
+import { TitleFeedback } from "./SectionTitle/SectionTitle";
 import { Statistics } from "./Statistics/Statistics";
 
 
@@ -41,13 +42,17 @@ export class App extends Component {
 
 
   render(){
+    const {good, neutral, bad} = this.state
     return (
           <div>
-            <Feedback handleIncrement = {this.handleIncrement}/>
+            <TitleFeedback>Please leave feedback</TitleFeedback>
+            <FeedbackOptions  FeedbackOptions = {this.handleIncrement} />
             <Statistics 
-                state ={this.state} 
+                good = {good}
+                neutral = {neutral}
+                bad = {bad}
                 totalFeedback={this.countTotalFeedback}
-                positivFeedback={this.countPositiveFeedbackPercentage}
+                positivePercentage={this.countPositiveFeedbackPercentage}
                 />
           </div>
         );
