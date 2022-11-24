@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Button, ButtonBox } from "./FeedbackOptions.styled"
 
 
@@ -13,12 +14,12 @@ export const FeedbackOptions = ({onLeaveFeedback, options}) =>{
                 <Button type="button" key={item} name={item} onClick={onLeaveFeedback}>{item}</Button>
            ))}
         </ButtonBox>
-        
-        
     )
-}//onClick={handleIncrement}
+}
 
 
-// <Button name="good">Good</Button>
-//         <Button name="neutral">Neutral</Button>
-//         <Button name="bad" >Bad</Button>
+
+FeedbackOptions.propTypes = {
+    options: PropTypes.array.isRequired,
+    onLeaveFeedback: PropTypes.func.isRequired,
+}

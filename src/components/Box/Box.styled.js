@@ -1,8 +1,7 @@
 
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import {  space, color, flexbox,  background, position, layout } from 'styled-system';
 
-// const Box = styled.div`
+export const Container = styled('div')( space, color, flexbox,  background, position, layout)
   
-// `;
 
-// export default Box ;

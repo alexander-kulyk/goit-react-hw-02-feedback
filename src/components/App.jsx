@@ -1,9 +1,13 @@
 // import { Box } from "./Box/Box";
 import React, { Component } from "react";
+import { ThemeProvider } from 'styled-components';
+
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
 import { Section } from "./Section/Section";
 import { Statistics } from "./Statistics/Statistics";
+import { Container } from "components/Box/Box.styled";
+import { theme } from "theme/theme";
 
 
 
@@ -13,8 +17,6 @@ export class App extends Component {
     neutral: 0,
     bad: 0
   }
-
-  
 
   handleIncrement = e =>{
 
@@ -47,7 +49,15 @@ export class App extends Component {
     const {good, neutral, bad} = this.state
     const total = good + neutral + bad
     return (
-          <div>
+          <ThemeProvider theme = {theme}>
+            <Container
+              display="flex"
+              flexDirection='column'
+              justifyContent='center'
+              alignItems='center'
+
+              pt={5} 
+            >
             <Section title = 'Please leave feedback'>
               <FeedbackOptions 
               options = {Object.keys(this.state)}  
@@ -67,9 +77,8 @@ export class App extends Component {
                   />
               </Section>
             }
-
-            
-          </div>
+          </Container>
+          </ThemeProvider>
         );
   }
 }
