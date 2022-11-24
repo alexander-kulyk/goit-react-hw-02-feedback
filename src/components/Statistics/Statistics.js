@@ -1,4 +1,4 @@
-import { ContainerStat, ItemStat, Positive, TitleStat, Total } from "./Statistics.styled"
+import { ContainerStat, ItemStat, Positive, Total } from "./Statistics.styled"
 
 
 
@@ -17,7 +17,6 @@ export const Statistics = ({good, neutral, bad, totalFeedback, positivePercentag
     }
     return(
         <ContainerStat>
-            <TitleStat>Statistic</TitleStat>
             <ItemStat>Good: {good}</ItemStat>
             <ItemStat>Neutral: {neutral}</ItemStat>
             <ItemStat>Bad: {bad}</ItemStat>

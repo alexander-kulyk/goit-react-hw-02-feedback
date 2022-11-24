@@ -1,17 +1,18 @@
-import { Button } from "./FeedbackOptions.styled"
+import { Button, ButtonBox } from "./FeedbackOptions.styled"
 
 
 
 
 
 
-export const FeedbackOptions = ({handleIncrement}) =>{
+export const FeedbackOptions = ({onLeaveFeedback, options}) =>{
+    
     return (
-        <>
-            <Button name="good" onClick={handleIncrement}>Good</Button>
-            <Button name="neutral" onClick={handleIncrement}>Neutral</Button>
-            <Button name="bad" onClick={handleIncrement}>Bad</Button>
-        </>
+        <ButtonBox> 
+           {options.map(item =>(
+                <Button type="button" key={item} name={item} onClick={onLeaveFeedback}>{item}</Button>
+           ))}
+        </ButtonBox>
         
         
     )
