@@ -20,6 +20,7 @@ export const Button = styled.button`
     background-color: ${p => p.theme.colors.bcBtn};
     color: ${p => p.theme.colors.secondText};
 
+
     cursor: pointer;
 
 `;
